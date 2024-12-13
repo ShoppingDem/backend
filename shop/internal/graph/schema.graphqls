@@ -1,0 +1,25 @@
+type User {
+  id: ID!
+  phoneNumber: String
+  email: String
+  oktaId: String!
+}
+
+input CreateUserInput {
+  phoneNumber: String
+  email: String
+}
+
+input LoginInput {
+  phoneNumber: String
+  email: String
+}
+
+type Mutation {
+  createUser(input: CreateUserInput!): User!
+  login(input: LoginInput!): String!
+}
+
+type Query {
+  user(id: ID!): User
+}
